@@ -1,17 +1,29 @@
-import React from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// CSS
+import './index.css'
+//setup vars
+const firstBook = {
+  img : "https://images-na.ssl-images-amazon.com/images/I/81tq0E85YeL.jpg";,
+  title : "La insoportable levedad del ser",
+  author : "Milan Kundera"
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+function BookList(){
+  return <section className="booklist">
+    <Book/>
+    <Book/>
+  </section>;
+}
+const Book = (props) => {
+
+  return (<article className='book'>
+    <img width="150px" src={img} alt="" />
+    <h1>{title}</h1>
+    <h4>{article.toUpperCase()}</h4>
+   </article>);
+}
+
+ReactDOM.render(<BookList/>,document.getElementById('root'));
